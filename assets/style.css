@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #f6f6f6;
 }
 
 header {
@@ -7,6 +8,9 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+header .logo {
+  background-color: white;
 }
 header img {
   width: 162px;
