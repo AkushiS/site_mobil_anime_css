@@ -19,6 +19,7 @@ header {
 
   .logo {
     background-color: white;
+    padding: 10px 0;
   }
 
   img {
@@ -53,12 +54,25 @@ section {
     flex-direction: column;
     text-align: center;
     margin-bottom: 50px;
+    gap: 10px;
+
+    p {
+      font-weight: 300;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      margin-top: 20px;
+    }
   }
 
-  &.container-secondary {
+  &.fonctionnement {
     background-color: white;
     padding: 20px;
     margin: 20px 0;
+    padding-bottom: 50px;
 
     i {
       color: #7e7e7e;
@@ -94,6 +108,69 @@ section {
 
     font-weight: 500;
   }
+
+  &.restaurant {
+    h2 {
+      padding-top: 40px;
+    }
+
+    article {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      width: 340px;
+      height: 251px;
+      border-radius: 15px;
+      overflow: hidden;
+      gap: 0px;
+      margin-bottom: 10px;
+      background-color: white;
+
+      img {
+        grid-column: 1 / -1;
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+        object-position: center 61%;
+      }
+
+      h3 {
+        grid-column: 1;
+        padding: 0;
+        padding-top: 10px;
+        margin: 0 0 0 10px;
+      }
+
+      p {
+        grid-column: 1;
+        padding: 0;
+        padding-bottom: 10px;
+        margin: 0 0 0 10px;
+      }
+
+      i {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: center;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.fa-heart {
+  font-size: 24px;
+}
+
+.fa-solid.fa-heart {
+  background: linear-gradient(
+    to bottom,
+    var(--main-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .number {

@@ -19,6 +19,7 @@ header {
 }
 header .logo {
   background-color: white;
+  padding: 10px 0;
 }
 header img {
   width: 162px;
@@ -47,16 +48,27 @@ section.container {
   flex-direction: column;
   text-align: center;
   margin-bottom: 50px;
+  gap: 10px;
 }
-section.container-secondary {
+section.container p {
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 20px;
+}
+section.container h1 {
+  margin: 0;
+  margin-top: 20px;
+}
+section.fonctionnement {
   background-color: white;
   padding: 20px;
   margin: 20px 0;
+  padding-bottom: 50px;
 }
-section.container-secondary i {
+section.fonctionnement i {
   color: #7e7e7e;
 }
-section.container-secondary i.fa-store {
+section.fonctionnement i.fa-store {
   color: var(--main-color);
 }
 section ul {
@@ -78,6 +90,59 @@ section li {
   padding: 10px 50px 10px 30px;
   gap: 30px;
   font-weight: 500;
+}
+section.restaurant h2 {
+  padding-top: 40px;
+}
+section.restaurant article {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  width: 340px;
+  height: 251px;
+  border-radius: 15px;
+  overflow: hidden;
+  gap: 0px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+section.restaurant article img {
+  grid-column: 1/-1;
+  width: 100%;
+  height: 175px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center 61%;
+     object-position: center 61%;
+}
+section.restaurant article h3 {
+  grid-column: 1;
+  padding: 0;
+  padding-top: 10px;
+  margin: 0 0 0 10px;
+}
+section.restaurant article p {
+  grid-column: 1;
+  padding: 0;
+  padding-bottom: 10px;
+  margin: 0 0 0 10px;
+}
+section.restaurant article i {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  margin-right: 10px;
+}
+
+.fa-heart {
+  font-size: 24px;
+}
+
+.fa-solid.fa-heart {
+  background: linear-gradient(to bottom, var(--main-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .number {
