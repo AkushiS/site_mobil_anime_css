@@ -3,6 +3,8 @@
   --secondary-color: #ff79da;
   --main-bg-color: #f6f6f6;
   --filter-bg-color: #deebff;
+  --new-bg-color: #99e2d0;
+  --new-text-color: #008766;
 }
 
 body {
@@ -17,26 +19,32 @@ header {
   align-items: center;
   flex-direction: column;
 }
-header .logo {
-  background-color: white;
-  padding: 10px 0;
-}
 header img {
   width: 162px;
-  padding: 15px;
-  margin-top: 5px;
+  padding: 0;
+  margin-top: 0;
 }
 header div {
   width: 100%;
-  height: 50px;
-  background-color: #eaeaea;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   color: #353535;
   font-weight: 500;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 -4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.location {
+  background-color: #eaeaea;
+  height: 50px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 section {
@@ -52,12 +60,16 @@ section.container {
 }
 section.container p {
   font-weight: 300;
-  margin: 0;
-  margin-bottom: 20px;
+  margin: 5px 0 20px 0;
+  font-size: 18px;
+  width: 315px;
 }
 section.container h1 {
   margin: 0;
   margin-top: 20px;
+  font-size: 24px;
+  width: 275px;
+  font-weight: 700;
 }
 section.fonctionnement {
   background-color: white;
@@ -71,13 +83,13 @@ section.fonctionnement i {
 section.fonctionnement i.fa-store {
   color: var(--main-color);
 }
-section ul {
+section.fonctionnement ul {
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-section li {
+section.fonctionnement li {
   position: relative;
   list-style: none;
   margin-left: 12px;
@@ -95,6 +107,7 @@ section.restaurant h2 {
   padding-top: 40px;
 }
 section.restaurant article {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
@@ -105,6 +118,16 @@ section.restaurant article {
   gap: 0px;
   margin-bottom: 10px;
   background-color: white;
+}
+section.restaurant article .new {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--new-bg-color);
+  color: var(--new-text-color);
+  padding: 7px 12px;
+  font-weight: 500;
+  border-radius: 2px;
 }
 section.restaurant article img {
   grid-column: 1/-1;
@@ -133,9 +156,34 @@ section.restaurant article i {
   align-self: center;
   margin-right: 10px;
 }
+section.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  margin: 0;
+  margin-top: 70px;
+}
+section.footer img {
+  width: 139px;
+  margin-left: 40px;
+  padding: 40px 0 10px 0;
+  filter: brightness(0) invert(1);
+}
+section.footer li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  margin: 0;
+}
+section.footer p {
+  margin: 5px 0;
+}
 
 .fa-heart {
   font-size: 24px;
+  padding-right: 10px;
 }
 
 .fa-solid.fa-heart {
@@ -174,4 +222,82 @@ button.secondary {
 }
 button:hover {
   background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(to top, var(--main-color), var(--secondary-color));
+}
+
+@media (min-width: 1024px) {
+  header img {
+    width: 200px;
+    padding: 0;
+    margin-top: 0;
+  }
+  .location {
+    background-color: #eaeaea;
+    height: 50px;
+    box-shadow: none;
+  }
+  .logo {
+    background-color: white;
+    padding: 30px 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  }
+  section.container p {
+    margin: 20px 0 20px 0;
+    width: auto;
+  }
+  section.container h1 {
+    width: auto;
+    font-size: 40px;
+  }
+  section.fonctionnement {
+    background-color: white;
+    padding: auto;
+    margin: auto;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  section h2,
+  section ul {
+    width: 100%;
+    max-width: 1053px;
+  }
+  section ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  section li {
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: var(--main-bg-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 10px 70px 10px 35px;
+    gap: 30px;
+    font-weight: 500;
+  }
+  section.restaurant {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  section.restaurant h2,
+  section.restaurant div {
+    width: 100%;
+    max-width: 1080px;
+  }
+  section .restaurant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 60px;
+  }
+  section .restaurant-container article {
+    width: 490px;
+  }
 }/*# sourceMappingURL=style.css.map */
