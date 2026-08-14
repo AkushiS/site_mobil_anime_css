@@ -76,6 +76,36 @@ section {
       width: 275px;
       font-weight: 700;
     }
+
+    button {
+      width: 218px;
+      height: 50px;
+      border: none;
+      border-radius: 25px;
+
+      background: linear-gradient(
+        to top,
+        var(--main-color),
+        var(--secondary-color)
+      );
+
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+      &.secondary {
+        width: 186px;
+      }
+
+      &:hover {
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
+          linear-gradient(to top, var(--main-color), var(--secondary-color));
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+      }
+    }
   }
 
   &.fonctionnement {
@@ -83,6 +113,22 @@ section {
     padding: 20px;
     margin: 20px 0;
     padding-bottom: 50px;
+
+    .number {
+      position: absolute;
+      left: -12px;
+
+      background-color: var(--main-color);
+      color: white;
+
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     i {
       color: #7e7e7e;
@@ -174,8 +220,48 @@ section {
       i {
         grid-column: 2;
         grid-row: 2;
-        align-self: center;
         margin-right: 10px;
+      }
+
+      .fa-heart {
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .fa-solid.fa-heart {
+        background: linear-gradient(
+          to bottom,
+          var(--main-color),
+          var(--secondary-color)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .heart-checkbox {
+        display: none;
+      }
+
+      .heart-label {
+        position: absolute;
+        cursor: pointer;
+        right: 20px;
+        bottom: 25px;
+
+        .fa-solid {
+          display: none;
+        }
+      }
+
+      .heart-checkbox:checked + .heart-label {
+        .fa-regular {
+          display: none;
+        }
+
+        .fa-solid {
+          display: inline;
+        }
       }
     }
   }
@@ -206,68 +292,6 @@ section {
     p {
       margin: 5px 0;
     }
-  }
-}
-
-.fa-heart {
-  font-size: 24px;
-  padding-right: 10px;
-}
-
-.fa-solid.fa-heart {
-  background: linear-gradient(
-    to bottom,
-    var(--main-color),
-    var(--secondary-color)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.number {
-  position: absolute;
-  left: -12px;
-
-  background-color: var(--main-color);
-  color: white;
-
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button {
-  width: 218px;
-  height: 50px;
-  border: none;
-  border-radius: 25px;
-
-  background: linear-gradient(
-    to top,
-    var(--main-color),
-    var(--secondary-color)
-  );
-
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-
-  &.secondary {
-    width: 186px;
-  }
-
-  &:hover {
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
-      linear-gradient(to top, var(--main-color), var(--secondary-color));
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
   }
 }
 

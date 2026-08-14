@@ -71,11 +71,41 @@ section.container h1 {
   width: 275px;
   font-weight: 700;
 }
+section.container button {
+  width: 218px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to top, var(--main-color), var(--secondary-color));
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+section.container button.secondary {
+  width: 186px;
+}
+section.container button:hover {
+  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(to top, var(--main-color), var(--secondary-color));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
 section.fonctionnement {
   background-color: white;
   padding: 20px;
   margin: 20px 0;
   padding-bottom: 50px;
+}
+section.fonctionnement .number {
+  position: absolute;
+  left: -12px;
+  background-color: var(--main-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 section.fonctionnement i {
   color: #7e7e7e;
@@ -153,8 +183,35 @@ section.restaurant article p {
 section.restaurant article i {
   grid-column: 2;
   grid-row: 2;
-  align-self: center;
   margin-right: 10px;
+}
+section.restaurant article .fa-heart {
+  font-size: 24px;
+  margin: 0;
+}
+section.restaurant article .fa-solid.fa-heart {
+  background: linear-gradient(to bottom, var(--main-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+section.restaurant article .heart-checkbox {
+  display: none;
+}
+section.restaurant article .heart-label {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  bottom: 25px;
+}
+section.restaurant article .heart-label .fa-solid {
+  display: none;
+}
+section.restaurant article .heart-checkbox:checked + .heart-label .fa-regular {
+  display: none;
+}
+section.restaurant article .heart-checkbox:checked + .heart-label .fa-solid {
+  display: inline;
 }
 section.footer {
   display: flex;
@@ -179,50 +236,6 @@ section.footer li {
 }
 section.footer p {
   margin: 5px 0;
-}
-
-.fa-heart {
-  font-size: 24px;
-  padding-right: 10px;
-}
-
-.fa-solid.fa-heart {
-  background: linear-gradient(to bottom, var(--main-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.number {
-  position: absolute;
-  left: -12px;
-  background-color: var(--main-color);
-  color: white;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button {
-  width: 218px;
-  height: 50px;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(to top, var(--main-color), var(--secondary-color));
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-}
-button.secondary {
-  width: 186px;
-}
-button:hover {
-  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(to top, var(--main-color), var(--secondary-color));
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 @media (min-width: 1024px) {
