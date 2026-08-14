@@ -222,6 +222,7 @@ button.secondary {
 }
 button:hover {
   background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(to top, var(--main-color), var(--secondary-color));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 @media (min-width: 1024px) {
