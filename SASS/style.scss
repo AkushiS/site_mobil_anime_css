@@ -1,11 +1,9 @@
-:root {
-  --main-color: #9356dc;
-  --secondary-color: #ff79da;
-  --main-bg-color: #f6f6f6;
-  --filter-bg-color: #deebff;
-  --new-bg-color: #99e2d0;
-  --new-text-color: #008766;
-}
+$main-color: #9356dc;
+$secondary-color: #ff79da;
+$main-bg-color: #f6f6f6;
+$filter-bg-color: #deebff;
+$new-bg-color: #99e2d0;
+$new-text-color: #008766;
 
 body {
   margin: 0;
@@ -83,11 +81,7 @@ section {
       border: none;
       border-radius: 25px;
 
-      background: linear-gradient(
-        to top,
-        var(--main-color),
-        var(--secondary-color)
-      );
+      background: linear-gradient(to top, $main-color, $secondary-color);
 
       color: #ffffff;
       font-size: 16px;
@@ -102,7 +96,7 @@ section {
       &:hover {
         background:
           linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
-          linear-gradient(to top, var(--main-color), var(--secondary-color));
+          linear-gradient(to top, $main-color, $secondary-color);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
       }
     }
@@ -118,7 +112,7 @@ section {
       position: absolute;
       left: -12px;
 
-      background-color: var(--main-color);
+      background-color: $main-color;
       color: white;
 
       width: 24px;
@@ -135,7 +129,7 @@ section {
     }
 
     i.fa-store {
-      color: var(--main-color);
+      color: $main-color;
     }
 
     ul {
@@ -155,7 +149,7 @@ section {
       justify-content: center;
 
       border-radius: 20px;
-      background-color: var(--main-bg-color);
+      background-color: $main-bg-color;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 
       padding: 10px 50px 10px 30px;
@@ -188,8 +182,8 @@ section {
         top: 10px;
         right: 10px;
 
-        background-color: var(--new-bg-color);
-        color: var(--new-text-color);
+        background-color: $new-bg-color;
+        color: $new-text-color;
         padding: 7px 12px;
         font-weight: 500;
         border-radius: 2px;
@@ -229,11 +223,7 @@ section {
       }
 
       .fa-solid.fa-heart {
-        background: linear-gradient(
-          to bottom,
-          var(--main-color),
-          var(--secondary-color)
-        );
+        background: linear-gradient(to bottom, $main-color, $secondary-color);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -364,7 +354,7 @@ section {
         justify-content: center;
 
         border-radius: 20px;
-        background-color: var(--main-bg-color);
+        background-color: $main-bg-color;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 
         padding: 10px 70px 10px 35px;
