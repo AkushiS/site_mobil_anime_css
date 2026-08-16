@@ -7,7 +7,7 @@ $new-text-color: #008766;
 
 body {
   margin: 0;
-  background-color: #f6f6f6;
+  background-color: $main-bg-color;
   font-family: "Roboto", sans-serif;
 }
 
@@ -76,6 +76,9 @@ section {
     }
 
     button {
+      position: relative;
+      overflow: hidden;
+
       width: 218px;
       height: 50px;
       border: none;
@@ -89,15 +92,29 @@ section {
 
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 
+      transition: box-shadow 0.3s ease;
+
       &.secondary {
         width: 186px;
       }
 
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0; /* prend toute la surface du bouton */
+
+        background: rgba(255, 255, 255, 0.15);
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
+      }
+
       &:hover {
-        background:
-          linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
-          linear-gradient(to top, $main-color, $secondary-color);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+
+        &::before {
+          opacity: 1;
+        }
       }
     }
   }
@@ -239,18 +256,32 @@ section {
         right: 20px;
         bottom: 25px;
 
+        .fa-regular {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
+
         .fa-solid {
-          display: none;
+          position: absolute;
+          left: 0; /* aligne le coeur plein avec le coeur vide */
+          opacity: 0; /* coeur plein invisible */
+          transform: scale(0); /* taille 0 */
+          transition:
+            /* deviens visible en 0.3s */
+            opacity 0.3s ease,
+            transform 0.3s ease;
+          /* grandit en 0.3s */
         }
       }
 
       .heart-checkbox:checked + .heart-label {
         .fa-regular {
-          display: none;
+          opacity: 0;
         }
 
         .fa-solid {
-          display: inline;
+          opacity: 1; /* redeviens visible */
+          transform: scale(1); /* reprend sa taille normal */
         }
       }
     }

@@ -1,12 +1,3 @@
-:root {
-  --main-color: #9356dc;
-  --secondary-color: #ff79da;
-  --main-bg-color: #f6f6f6;
-  --filter-bg-color: #deebff;
-  --new-bg-color: #99e2d0;
-  --new-text-color: #008766;
-}
-
 body {
   margin: 0;
   background-color: #f6f6f6;
@@ -72,28 +63,35 @@ section.container h1 {
   font-weight: 700;
 }
 section.container button {
+  position: relative;
+  overflow: hidden;
   width: 218px;
   height: 50px;
   border: none;
   border-radius: 25px;
-  background: linear-gradient(
-    to top,
-    var(--main-color),
-    var(--secondary-color)
-  );
+  background: linear-gradient(to top, #9356dc, #ff79da);
   color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease;
 }
 section.container button.secondary {
   width: 186px;
 }
+section.container button::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* prend toute la surface du bouton */
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 section.container button:hover {
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
-    linear-gradient(to top, var(--main-color), var(--secondary-color));
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+section.container button:hover::before {
+  opacity: 1;
 }
 section.fonctionnement {
   background-color: white;
@@ -104,7 +102,7 @@ section.fonctionnement {
 section.fonctionnement .number {
   position: absolute;
   left: -12px;
-  background-color: var(--main-color);
+  background-color: #9356dc;
   color: white;
   width: 24px;
   height: 24px;
@@ -117,7 +115,7 @@ section.fonctionnement i {
   color: #7e7e7e;
 }
 section.fonctionnement i.fa-store {
-  color: var(--main-color);
+  color: #9356dc;
 }
 section.fonctionnement ul {
   padding: 0;
@@ -133,7 +131,7 @@ section.fonctionnement li {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  background-color: var(--main-bg-color);
+  background-color: #f6f6f6;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   padding: 10px 50px 10px 30px;
   gap: 30px;
@@ -159,8 +157,8 @@ section.restaurant article .new {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: var(--new-bg-color);
-  color: var(--new-text-color);
+  background-color: #99e2d0;
+  color: #008766;
   padding: 7px 12px;
   font-weight: 500;
   border-radius: 2px;
@@ -170,9 +168,9 @@ section.restaurant article img {
   width: 100%;
   height: 175px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: center 61%;
-  object-position: center 61%;
+     object-position: center 61%;
 }
 section.restaurant article h3 {
   grid-column: 1;
@@ -196,11 +194,7 @@ section.restaurant article .fa-heart {
   margin: 0;
 }
 section.restaurant article .fa-solid.fa-heart {
-  background: linear-gradient(
-    to bottom,
-    var(--main-color),
-    var(--secondary-color)
-  );
+  background: linear-gradient(to bottom, #9356dc, #ff79da);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -214,14 +208,24 @@ section.restaurant article .heart-label {
   right: 20px;
   bottom: 25px;
 }
+section.restaurant article .heart-label .fa-regular {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
 section.restaurant article .heart-label .fa-solid {
-  display: none;
+  position: absolute;
+  left: 0; /* aligne le coeur plein avec le coeur vide */
+  opacity: 0; /* coeur plein invisible */
+  transform: scale(0); /* taille 0 */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* grandit en 0.3s */
 }
 section.restaurant article .heart-checkbox:checked + .heart-label .fa-regular {
-  display: none;
+  opacity: 0;
 }
 section.restaurant article .heart-checkbox:checked + .heart-label .fa-solid {
-  display: inline;
+  opacity: 1; /* redeviens visible */
+  transform: scale(1); /* reprend sa taille normal */
 }
 section.footer {
   display: flex;
@@ -301,7 +305,7 @@ section.footer p {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    background-color: var(--main-bg-color);
+    background-color: #f6f6f6;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     padding: 10px 70px 10px 35px;
     gap: 30px;
@@ -360,4 +364,4 @@ section.footer p {
   section.footer .space {
     margin-right: 50px;
   }
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
