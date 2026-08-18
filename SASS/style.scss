@@ -11,6 +11,93 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Animation Loader */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background-color: $main-bg-color;
+  z-index: 1000;
+  animation: loader-disappear 0.5s ease 2s forwards;
+}
+
+@keyframes loader-disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-text {
+  display: flex;
+  font-family: "Shrikhand", serif;
+  font-size: 40px;
+  background: linear-gradient(to top, $main-color, $secondary-color);
+  background-clip: text;
+  color: transparent;
+  padding: 70px 10px;
+
+  span {
+    position: relative;
+    animation: loader-wave 1.5s ease-in-out infinite;
+  }
+
+  .letter-2 {
+    animation-delay: 0.1s;
+  }
+
+  .letter-3 {
+    animation-delay: 0.2s;
+  }
+
+  .letter-4 {
+    animation-delay: 0.3s;
+  }
+
+  .letter-5 {
+    animation-delay: 0.4s;
+  }
+
+  .letter-6 {
+    animation-delay: 0.5s;
+  }
+
+  .letter-7 {
+    animation-delay: 0.6s;
+  }
+
+  .letter-8 {
+    animation-delay: 0.7s;
+  }
+}
+
+@keyframes loader-wave {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: -50px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+/* Fin d'animation Loader */
+
 header {
   display: flex;
   justify-content: center;
@@ -241,7 +328,6 @@ section {
 
       .fa-solid.fa-heart {
         background: linear-gradient(to bottom, $main-color, $secondary-color);
-        -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
@@ -294,24 +380,46 @@ section {
     margin: 0;
     margin-top: 70px;
 
-    img {
-      width: 139px;
-      margin-left: 40px;
-      padding: 40px 0 10px 0;
-      filter: brightness(0) invert(1);
+    .title-footer {
+      font-size: 18px;
+      color: white;
+      font-family: "Shrikhand", serif;
+      margin: 25px 0 0 25px;
+      font-weight: 400;
+    }
+
+    i {
+      height: 13px;
+      width: 12px;
+
+      &.fa-utensils {
+        display: inline-block;
+        transform: scaleX(0.9);
+      }
+
+      &.fa-handshake-angle {
+        display: inline-block;
+        transform: scaleX(0.6);
+      }
+    }
+
+    ul {
+      padding-left: 25px;
     }
 
     li {
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 5px;
+      gap: 10px;
       color: white;
       margin: 0;
+      padding: 0;
     }
 
     p {
       margin: 5px 0;
+      padding: 0;
     }
   }
 }
@@ -354,7 +462,6 @@ section {
 
     &.fonctionnement {
       background-color: white;
-      padding: auto;
       margin: auto;
       padding-bottom: 50px;
       display: flex;
