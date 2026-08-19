@@ -15,7 +15,7 @@ body {
 
 .loader {
   position: fixed;
-  inset: 0;
+  inset: 0; /* Prend toutes la surface de la page */
   background-color: $main-bg-color;
   z-index: 1000;
   animation: loader-disappear 0.5s ease 2s forwards;
@@ -99,37 +99,33 @@ body {
 /* Fin d'animation Loader */
 
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    padding: 5px 0 0 0;
+  }
 
   img {
     width: 162px;
-    padding: 0;
+    padding: 15px 0;
     margin-top: 0;
   }
-
-  div {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    color: #353535;
-    font-weight: 500;
-  }
-}
-
-.logo {
-  background-color: white;
-  padding: 15px 0;
-
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-  z-index: 1;
 }
 
 .location {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #353535;
+  font-weight: 500;
+
   background-color: #eaeaea;
   height: 50px;
 
@@ -257,9 +253,18 @@ section {
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 
       padding: 10px 50px 10px 30px;
-      gap: 30px;
 
       font-weight: 500;
+
+      i {
+        position: absolute;
+        left: 30px;
+        color: #7e7e7e;
+
+        &.fa-mobile-screen-button {
+          font-size: 19px;
+        }
+      }
     }
   }
 
@@ -280,6 +285,11 @@ section {
       gap: 0px;
       margin-bottom: 10px;
       background-color: white;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
 
       .new {
         position: absolute;
@@ -431,6 +441,10 @@ section {
       padding: 0;
       margin-top: 0;
     }
+
+    .logo {
+      padding: 30px 0 30px 0;
+    }
   }
 
   .location {
@@ -438,13 +452,6 @@ section {
     height: 50px;
 
     box-shadow: none;
-  }
-
-  .logo {
-    background-color: white;
-    padding: 30px 0;
-
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
   }
 
   section {
@@ -483,23 +490,12 @@ section {
       }
 
       li {
-        position: relative;
-        list-style: none;
         width: 335px;
+        padding: 10px 0;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 20px;
-        background-color: $main-bg-color;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-
-        padding: 10px 70px 10px 35px;
-
-        gap: 30px;
-
-        font-weight: 500;
+        i {
+          left: 40px;
+        }
       }
     }
 

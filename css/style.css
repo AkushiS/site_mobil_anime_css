@@ -7,7 +7,7 @@ body {
 /* Animation Loader */
 .loader {
   position: fixed;
-  inset: 0;
+  inset: 0; /* Prend toutes la surface de la page */
   background-color: #f6f6f6;
   z-index: 1000;
   animation: loader-disappear 0.5s ease 2s forwards;
@@ -77,18 +77,23 @@ body {
   }
 }
 /* Fin d'animation Loader */
-header {
+header .logo {
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  padding: 5px 0 0 0;
 }
 header img {
   width: 162px;
-  padding: 0;
+  padding: 15px 0;
   margin-top: 0;
 }
-header div {
+
+.location {
   width: 100%;
   display: flex;
   align-items: center;
@@ -96,16 +101,6 @@ header div {
   gap: 20px;
   color: #353535;
   font-weight: 500;
-}
-
-.logo {
-  background-color: white;
-  padding: 15px 0;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-  z-index: 1;
-}
-
-.location {
   background-color: #eaeaea;
   height: 50px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -207,8 +202,15 @@ section.fonctionnement li {
   background-color: #f6f6f6;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   padding: 10px 50px 10px 30px;
-  gap: 30px;
   font-weight: 500;
+}
+section.fonctionnement li i {
+  position: absolute;
+  left: 30px;
+  color: #7e7e7e;
+}
+section.fonctionnement li i.fa-mobile-screen-button {
+  font-size: 19px;
 }
 section.restaurant h2 {
   padding-top: 40px;
@@ -225,6 +227,10 @@ section.restaurant article {
   gap: 0px;
   margin-bottom: 10px;
   background-color: white;
+}
+section.restaurant article a {
+  text-decoration: none;
+  color: black;
 }
 section.restaurant article .new {
   position: absolute;
@@ -349,15 +355,13 @@ section.footer p {
     padding: 0;
     margin-top: 0;
   }
+  header .logo {
+    padding: 30px 0 30px 0;
+  }
   .location {
     background-color: #eaeaea;
     height: 50px;
     box-shadow: none;
-  }
-  .logo {
-    background-color: white;
-    padding: 30px 0;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
   }
   section.container p {
     margin: 20px 0 20px 0;
@@ -388,18 +392,11 @@ section.footer p {
     gap: 24px;
   }
   section.fonctionnement li {
-    position: relative;
-    list-style: none;
     width: 335px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    background-color: #f6f6f6;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    padding: 10px 70px 10px 35px;
-    gap: 30px;
-    font-weight: 500;
+    padding: 10px 0;
+  }
+  section.fonctionnement li i {
+    left: 40px;
   }
   section.restaurant {
     display: flex;
