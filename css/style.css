@@ -344,9 +344,15 @@ section.footer li {
   margin: 0;
   padding: 0;
 }
-section.footer p {
+section.footer a {
+  text-decoration: none;
+  color: white;
   margin: 5px 0;
   padding: 0;
+}
+section.footer .space,
+section.footer .weight {
+  font-weight: 500;
 }
 
 @media (min-width: 1024px) {
@@ -444,9 +450,9 @@ section.footer p {
   section.footer i {
     margin-bottom: 10px;
   }
-  section.footer p {
-    margin-bottom: 10px;
-    padding-right: 10px;
+  section.footer a {
+    margin-bottom: 5px;
+    padding-right: 5px;
   }
   section.footer .space {
     margin-right: 30px;

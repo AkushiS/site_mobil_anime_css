@@ -427,9 +427,16 @@ section {
       padding: 0;
     }
 
-    p {
+    a {
+      text-decoration: none;
+      color: white;
       margin: 5px 0;
       padding: 0;
+    }
+
+    .space,
+    .weight {
+      font-weight: 500;
     }
   }
 }
@@ -553,9 +560,9 @@ section {
         margin-bottom: 10px;
       }
 
-      p {
-        margin-bottom: 10px;
-        padding-right: 10px;
+      a {
+        margin-bottom: 5px;
+        padding-right: 5px;
       }
 
       .space {
