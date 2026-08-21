@@ -38,7 +38,6 @@ section.footer {
   flex-direction: column;
   background-color: #353535;
   margin: 0;
-  margin-top: 70px;
 }
 section.footer .title-footer {
   font-size: 18px;
@@ -89,7 +88,6 @@ section.footer .weight {
     align-items: end;
     justify-content: flex-end;
     margin: 0;
-    margin-top: 70px;
   }
   section.footer ul {
     display: flex;
@@ -154,4 +152,18 @@ body {
   margin: 0;
   background-color: #f6f6f6;
   font-family: "Roboto", sans-serif;
+}
+
+main {
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  padding: 30px 20px 0 20px;
+  margin-top: -60px;
+  position: relative;
+}
+main .title h1 {
+  font-family: "Shrikhand", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
 }/*# sourceMappingURL=menu.css.map */
