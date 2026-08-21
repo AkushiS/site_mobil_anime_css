@@ -1,9 +1,6 @@
-$main-color: #9356dc;
-$secondary-color: #ff79da;
-$main-bg-color: #f6f6f6;
-$filter-bg-color: #deebff;
-$new-bg-color: #99e2d0;
-$new-text-color: #008766;
+@use "variables";
+@use "button";
+@use "footer";
 
 body {
   margin: 0;
@@ -156,49 +153,6 @@ section {
       font-size: 24px;
       width: 275px;
       font-weight: 700;
-    }
-
-    button {
-      position: relative;
-      overflow: hidden;
-
-      width: 218px;
-      height: 50px;
-      border: none;
-      border-radius: 25px;
-
-      background: linear-gradient(to top, $main-color, $secondary-color);
-
-      color: #ffffff;
-      font-size: 16px;
-      font-weight: 500;
-
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-
-      transition: box-shadow 0.3s ease;
-
-      &.secondary {
-        width: 186px;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0; /* prend toute la surface du bouton */
-
-        background: rgba(255, 255, 255, 0.15);
-        opacity: 0;
-
-        transition: opacity 0.3s ease;
-      }
-
-      &:hover {
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-
-        &::before {
-          opacity: 1;
-        }
-      }
     }
   }
 
@@ -382,63 +336,6 @@ section {
       }
     }
   }
-
-  &.footer {
-    display: flex;
-    flex-direction: column;
-    background-color: #353535;
-    margin: 0;
-    margin-top: 70px;
-
-    .title-footer {
-      font-size: 18px;
-      color: white;
-      font-family: "Shrikhand", serif;
-      margin: 25px 0 0 25px;
-      font-weight: 400;
-    }
-
-    i {
-      height: 13px;
-      width: 12px;
-
-      &.fa-utensils {
-        display: inline-block;
-        transform: scaleX(0.9);
-      }
-
-      &.fa-handshake-angle {
-        display: inline-block;
-        transform: scaleX(0.6);
-      }
-    }
-
-    ul {
-      padding-left: 25px;
-    }
-
-    li {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-      margin: 5px 0;
-      padding: 0;
-    }
-
-    .space,
-    .weight {
-      font-weight: 500;
-    }
-  }
 }
 
 @media (min-width: 1024px) {
@@ -525,48 +422,6 @@ section {
 
       article {
         width: 490px;
-      }
-    }
-
-    &.footer {
-      height: 114px;
-      flex-direction: row;
-      align-items: end;
-      justify-content: flex-end;
-      margin: 0;
-      margin-top: 70px;
-
-      ul {
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-      }
-
-      .title-footer {
-        margin: 0 50px 25px 70px;
-        order: 2;
-      }
-
-      li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 15px;
-        margin: 0;
-        order: 1;
-      }
-
-      i {
-        margin-bottom: 10px;
-      }
-
-      a {
-        margin-bottom: 5px;
-        padding-right: 5px;
-      }
-
-      .space {
-        margin-right: 30px;
       }
     }
   }

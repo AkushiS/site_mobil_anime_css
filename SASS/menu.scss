@@ -1,0 +1,15 @@
+@use "variables";
+@use "button";
+@use "footer";
+@use "header";
+
+body {
+  margin: 0;
+  background-color: variables.$main-bg-color;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  background-color: variable.$main-bg-color;
+  border-radius: 40px 0;
+}

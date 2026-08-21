@@ -1,0 +1,48 @@
+@use "variables";
+
+button {
+  position: relative;
+  overflow: hidden;
+
+  width: 218px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+
+  background: linear-gradient(
+    to top,
+    variables.$main-color,
+    variables.$secondary-color
+  );
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+  transition: box-shadow 0.3s ease;
+
+  &.secondary {
+    width: 186px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* prend toute la surface du bouton */
+
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
