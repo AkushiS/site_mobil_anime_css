@@ -410,8 +410,6 @@ section.restaurant article .heart-checkbox:checked + .heart-label .fa-solid {
     box-shadow: none;
   }
   .location {
-    background-color: #eaeaea;
-    height: 50px;
     box-shadow: none;
   }
   section.container p {
@@ -423,21 +421,16 @@ section.restaurant article .heart-checkbox:checked + .heart-label .fa-solid {
     font-size: 40px;
   }
   section.fonctionnement {
-    background-color: white;
     margin: auto;
-    padding-bottom: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
   }
   section.fonctionnement h2,
   section.fonctionnement ul {
-    width: 100%;
     max-width: 1053px;
   }
   section.fonctionnement ul {
-    padding: 0;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 24px;
