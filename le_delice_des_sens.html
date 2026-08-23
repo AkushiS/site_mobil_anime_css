@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>OhMyFood</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/menu.css">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -18,10 +18,81 @@
 
     <body>
         <header>
-
+            <div class="logo">
+                <a href="index.html" class="back-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <img src="css/images/logo/ohmyfood.png" alt="logo_OhMyFood">
+            </div>
+            <img src="css/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Plat du restaurant La palette du goût">
         </header>
         
         <main>
+            <div class="title">
+                <h1>Le délice des sens</h1>
+                <input type="checkbox" id="heart-1" class="heart-checkbox">
+                    <label for="heart-1" class="heart-label">
+                        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                    </label>
+            </div>
+
+            <section class="menu">
+                <h2>ENTRÉES</h2>
+
+                <article>
+                    <h3>Tartare de thon</h3>
+                    <p>Assaisonné au yuzu <span>25€</span></p>
+                </article>
+                <article>
+                    <h3>Bouchée de homard croustillant</h3>
+                    <p>Et sa farandole de petits légumes <span>35€</span></p>
+                </article>
+                <article>
+                    <h3>Poulet rôti aux herbes de Provence</h3>
+                    <p>Et sa crème de truffe <span>40€</span></p>
+                </article>
+            </section>
+
+            <section class="menu">
+                <h2>PLATS</h2>
+
+                <article>
+                    <h3>Poulet rôti aux herbes de Provence</h3>
+                    <p>Et sa crème de truffe <span>40€</span></p>
+                </article>
+                <article>
+                    <h3>Langouste rôtie</h3>
+                    <p>Et ses légumes de saison <span>35€</span></p>
+                </article>
+                <article>
+                    <h3>Côte de bœuf Angus </h3>
+                    <p>Et sa purée de panais <span>44€</span></p>
+                </article>
+            </section>
+
+            <section class="menu">
+                <h2>DESSERTS</h2>
+
+                <article>
+                    <h3>Farandole de desserts</h3>
+                    <p>Du chef <span>18€</span></p>
+                </article>
+                <article>
+                    <h3>Crème brulée</h3>
+                    <p>Revisitée <span>22€</span></p>
+                </article>
+                <article>
+                    <h3>Tiramisu</h3> 
+                    <p>À la noisette <span>23€</span></p>
+                </article>
+            </section>
+
+                <div class="alone">
+                    <button type="submit">
+                        <span>Commander</span>
+                    </button>
+                </div>
 
         </main>
         <footer>

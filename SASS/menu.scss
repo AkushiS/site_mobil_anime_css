@@ -12,16 +12,241 @@ body {
 main {
   background-color: variables.$main-bg-color;
   border-radius: 40px 40px 0 0;
-  padding: 30px 20px 0 20px;
+  padding: 30px 13px 0 13px;
   margin-top: -60px;
   position: relative;
 
   .title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    gap: 30px;
+    width: 349px;
+
     h1 {
       font-family: "Shrikhand", serif;
       font-size: 28px;
       font-weight: 400;
       margin: 0;
+    }
+  }
+
+  .alone {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+  }
+}
+
+section.menu {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: 12px;
+  width: 349px;
+
+  h2 {
+    display: flex;
+    align-self: start;
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom: 3px solid variables.$new-bg-color;
+    width: 40px;
+    padding-bottom: 5px;
+    margin: 30px 0 0 0;
+  }
+
+  article {
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    width: 349px;
+    height: 69px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    h3,
+    p {
+      margin: 0;
+      margin-left: 15px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    span {
+      position: absolute;
+      right: 10px;
+      font-weight: 700;
+      color: #353535;
+    }
+  }
+}
+
+.fa-heart {
+  font-size: 24px;
+}
+
+.fa-solid.fa-heart {
+  background: linear-gradient(
+    to bottom,
+    variables.$main-color,
+    variables.$secondary-color
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.heart-checkbox {
+  display: none;
+}
+
+.heart-label {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+
+  .fa-regular {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .fa-solid {
+    position: absolute;
+    left: 0; /* aligne le coeur plein avec le coeur vide */
+    opacity: 0; /* coeur plein invisible */
+    transform: scale(0); /* taille 0 */
+    transition:
+      /* deviens visible en 0.3s */
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    /* grandit en 0.3s */
+  }
+}
+
+.heart-checkbox:checked + .heart-label {
+  .fa-regular {
+    opacity: 0;
+  }
+
+  .fa-solid {
+    opacity: 1; /* redeviens visible */
+    transform: scale(1); /* reprend sa taille normal */
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-color: white;
+  }
+
+  main {
+    width: 1055px;
+    display: block;
+    justify-self: center;
+    padding: 30px 0px 0 0px;
+
+    .title {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+
+      h1 {
+        font-family: "Shrikhand", serif;
+        font-size: 28px;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+
+    .alone {
+      display: flex;
+      justify-content: center;
+      padding: 40px 0;
+    }
+  }
+
+  .heart-label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  section.menu {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    width: 634px;
+    gap: 12px;
+
+    h2 {
+      display: flex;
+      align-self: start;
+      font-weight: 300;
+      font-size: 16px;
+      border-bottom: 3px solid variables.$new-bg-color;
+      width: 40px;
+      padding-bottom: 5px;
+      margin: 40px 0 0 0;
+    }
+
+    article {
+      position: relative;
+      background-color: white;
+      border-radius: 15px;
+      width: 634px;
+      height: 69px;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+      h3,
+      p {
+        margin: 0;
+        margin-left: 15px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      span {
+        position: absolute;
+        right: 10px;
+        font-weight: 700;
+        color: #353535;
+      }
     }
   }
 }

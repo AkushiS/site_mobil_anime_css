@@ -32,3 +32,23 @@ header {
     object-fit: cover;
   }
 }
+
+@media (min-width: 1024px) {
+  header {
+    div > img {
+      width: 200px;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    .logo {
+      padding: 30px 0 30px 0;
+      box-shadow: none;
+    }
+
+    > img {
+      height: 383px;
+      object-position: center 60%;
+    }
+  }
+}

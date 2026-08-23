@@ -148,6 +148,22 @@ header > img {
      object-fit: cover;
 }
 
+@media (min-width: 1024px) {
+  header div > img {
+    width: 200px;
+    padding: 0;
+    margin-top: 0;
+  }
+  header .logo {
+    padding: 30px 0 30px 0;
+    box-shadow: none;
+  }
+  header > img {
+    height: 383px;
+    -o-object-position: center 60%;
+       object-position: center 60%;
+  }
+}
 body {
   margin: 0;
   background-color: #f6f6f6;
@@ -157,13 +173,205 @@ body {
 main {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
-  padding: 30px 20px 0 20px;
+  padding: 30px 13px 0 13px;
   margin-top: -60px;
   position: relative;
+}
+main .title {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  gap: 30px;
+  width: 349px;
 }
 main .title h1 {
   font-family: "Shrikhand", serif;
   font-size: 28px;
   font-weight: 400;
   margin: 0;
+}
+main .alone {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+section.menu {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: 12px;
+  width: 349px;
+}
+section.menu h2 {
+  display: flex;
+  align-self: start;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom: 3px solid #99e2d0;
+  width: 40px;
+  padding-bottom: 5px;
+  margin: 30px 0 0 0;
+}
+section.menu article {
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+  width: 349px;
+  height: 69px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+section.menu article h3,
+section.menu article p {
+  margin: 0;
+  margin-left: 15px;
+}
+section.menu article h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+section.menu article p {
+  font-size: 15px;
+  font-weight: 300;
+}
+section.menu article span {
+  position: absolute;
+  right: 10px;
+  font-weight: 700;
+  color: #353535;
+}
+
+.fa-heart {
+  font-size: 24px;
+}
+
+.fa-solid.fa-heart {
+  background: linear-gradient(to bottom, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.heart-checkbox {
+  display: none;
+}
+
+.heart-label {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+}
+.heart-label .fa-regular {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.heart-label .fa-solid {
+  position: absolute;
+  left: 0; /* aligne le coeur plein avec le coeur vide */
+  opacity: 0; /* coeur plein invisible */
+  transform: scale(0); /* taille 0 */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* grandit en 0.3s */
+}
+
+.heart-checkbox:checked + .heart-label .fa-regular {
+  opacity: 0;
+}
+.heart-checkbox:checked + .heart-label .fa-solid {
+  opacity: 1; /* redeviens visible */
+  transform: scale(1); /* reprend sa taille normal */
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-color: white;
+  }
+  main {
+    width: 1055px;
+    display: block;
+    justify-self: center;
+    padding: 30px 0px 0 0px;
+  }
+  main .title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  main .title h1 {
+    font-family: "Shrikhand", serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0;
+  }
+  main .alone {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+  }
+  .heart-label {
+    position: relative;
+    cursor: pointer;
+  }
+  section.menu {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    width: 634px;
+    gap: 12px;
+  }
+  section.menu h2 {
+    display: flex;
+    align-self: start;
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom: 3px solid #99e2d0;
+    width: 40px;
+    padding-bottom: 5px;
+    margin: 40px 0 0 0;
+  }
+  section.menu article {
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    width: 634px;
+    height: 69px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  section.menu article h3,
+  section.menu article p {
+    margin: 0;
+    margin-left: 15px;
+  }
+  section.menu article h3 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  section.menu article p {
+    font-size: 15px;
+    font-weight: 300;
+  }
+  section.menu article span {
+    position: absolute;
+    right: 10px;
+    font-weight: 700;
+    color: #353535;
+  }
 }/*# sourceMappingURL=menu.css.map */
