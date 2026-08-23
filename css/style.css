@@ -301,11 +301,15 @@ section.fonctionnement li i.fa-mobile-screen-button {
   font-size: 19px;
 }
 section.restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 60px;
 }
 section.restaurant h2 {
   padding-top: 40px;
   margin-bottom: 20px;
+  transform: translateX(-105px);
 }
 section.restaurant article {
   position: relative;
