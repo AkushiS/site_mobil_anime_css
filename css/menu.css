@@ -329,6 +329,78 @@ section.menu article span {
   animation-delay: 1s;
 }
 
+.plat-checkbox {
+  display: none;
+}
+
+.check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 25px;
+  width: 40px;
+  height: 20px;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  overflow: hidden;
+}
+.check .fa-xmark {
+  position: absolute;
+  right: 7px;
+  color: #888;
+  z-index: 1;
+}
+.check .check-background {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #99e2d0;
+  transform: translateX(150%);
+  transition: transform 0.4s ease;
+}
+.check .check-button {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(150%);
+  transition: transform 0.4s ease;
+  transition-delay: 0s;
+  z-index: 2;
+}
+.check .check-button .fa-check {
+  color: #99e2d0;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.plat-checkbox:checked + .check .check-background {
+  transform: translateX(0);
+  transition-delay: 0s;
+}
+.plat-checkbox:checked + .check .fa-xmark {
+  opacity: 0;
+}
+.plat-checkbox:checked + .check .check-button {
+  transform: translateX(-9px);
+  transition-delay: 0.05s;
+}
+.plat-checkbox:checked + .check .check-button .fa-check {
+  opacity: 1;
+}
+
 @media (min-width: 1024px) {
   body {
     background-color: white;

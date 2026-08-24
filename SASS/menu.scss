@@ -193,6 +193,100 @@ section.menu {
   animation-delay: 1s;
 }
 
+.plat-checkbox {
+  display: none;
+}
+
+.check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 25px;
+
+  width: 40px;
+  height: 20px;
+
+  background-color: #e0e0e0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  .fa-xmark {
+    position: absolute;
+    right: 7px;
+    color: #888;
+    z-index: 1;
+  }
+
+  .check-background {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    border-radius: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: variables.$new-bg-color;
+
+    transform: translateX(150%);
+    transition: transform 0.4s ease;
+  }
+
+  .check-button {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateX(150%);
+    transition: transform 0.4s ease;
+    transition-delay: 0s;
+
+    z-index: 2;
+
+    .fa-check {
+      color: variables.$new-bg-color;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+    }
+  }
+}
+
+.plat-checkbox:checked + .check {
+  .check-background {
+    transform: translateX(0);
+    transition-delay: 0s;
+  }
+
+  .fa-xmark {
+    opacity: 0;
+  }
+
+  .check-button {
+    transform: translateX(-9px);
+    transition-delay: 0.05s;
+
+    .fa-check {
+      opacity: 1;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   body {
     background-color: white;
