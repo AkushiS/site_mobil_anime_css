@@ -123,6 +123,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Animation Loader */
 .loader {
   position: fixed;
