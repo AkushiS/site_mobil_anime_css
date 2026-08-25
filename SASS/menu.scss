@@ -223,6 +223,7 @@ section.menu {
     position: absolute;
     right: 7px;
     color: #888;
+    transition: opacity 0.4s ease;
     z-index: 1;
   }
 
@@ -266,7 +267,7 @@ section.menu {
     .fa-check {
       color: variables.$new-bg-color;
       opacity: 0;
-      transition: opacity 0.1s ease;
+      transition: opacity 0.5s ease;
     }
   }
 }

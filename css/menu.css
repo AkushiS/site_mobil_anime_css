@@ -355,6 +355,7 @@ section.menu article span {
   position: absolute;
   right: 7px;
   color: #888;
+  transition: opacity 0.4s ease;
   z-index: 1;
 }
 .check .check-background {
@@ -387,7 +388,7 @@ section.menu article span {
 .check .check-button .fa-check {
   color: #99e2d0;
   opacity: 0;
-  transition: opacity 0.1s ease;
+  transition: opacity 0.5s ease;
 }
 
 .plat-checkbox:checked + .check .check-background {
