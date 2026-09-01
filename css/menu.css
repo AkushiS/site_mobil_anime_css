@@ -201,61 +201,7 @@ main .alone {
   padding: 40px 0;
 }
 
-section.menu {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-self: center;
-  gap: 12px;
-  width: 349px;
-}
-section.menu h2 {
-  display: flex;
-  align-self: start;
-  font-weight: 300;
-  font-size: 16px;
-  border-bottom: 3px solid #99e2d0;
-  width: 40px;
-  padding-bottom: 5px;
-  margin: 30px 0 0 0;
-}
-section.menu article {
-  position: relative;
-  background-color: white;
-  border-radius: 15px;
-  width: 349px;
-  height: 69px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-section.menu article h3,
-section.menu article p {
-  width: 280px;
-  margin: 0;
-  margin-left: 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-section.menu article h3 {
-  font-size: 18px;
-  font-weight: 500;
-}
-section.menu article p {
-  font-size: 15px;
-  font-weight: 300;
-}
-section.menu article span {
-  position: absolute;
-  right: 10px;
-  font-weight: 700;
-  color: #353535;
-}
-
+/* Animation coeur */
 .fa-heart {
   font-size: 24px;
 }
@@ -295,6 +241,64 @@ section.menu article span {
 .heart-checkbox:checked + .heart-label .fa-solid {
   opacity: 1; /* redeviens visible */
   transform: scale(1); /* reprend sa taille normal */
+}
+
+/* Fin animation coeur */
+section.menu {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: 12px;
+  width: 349px;
+}
+section.menu h2 {
+  display: flex;
+  align-self: start;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom: 3px solid #99e2d0;
+  width: 40px;
+  padding-bottom: 5px;
+  margin: 30px 0 0 0;
+}
+section.menu article {
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+  width: 349px;
+  height: 69px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+section.menu article h3,
+section.menu article p {
+  width: 280px;
+  margin: 0;
+  margin-left: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section.menu article h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+section.menu article p {
+  font-size: 15px;
+  font-weight: 300;
+  transition: width 0.4s ease;
+}
+section.menu article p span {
+  position: absolute;
+  right: 10px;
+  font-weight: 700;
+  color: #353535;
+  transition: right 0.4s ease;
 }
 
 @keyframes appear {
@@ -339,71 +343,51 @@ section.menu article span {
 
 .check {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  border-radius: 25px;
-  width: 40px;
-  height: 20px;
-  background-color: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  inset: 0;
+  border-radius: 15px;
   cursor: pointer;
   overflow: hidden;
 }
-.check .fa-xmark {
-  position: absolute;
-  right: 7px;
-  color: #888;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-.check .check-background {
+
+.check-background {
   position: absolute;
   top: 0;
-  left: 5px;
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  width: 59px;
+  height: 69px;
   background-color: #99e2d0;
-  transform: translateX(150%);
+  transform: translateX(100%);
   transition: transform 0.4s ease;
-}
-.check .check-button {
-  position: absolute;
-  right: 10px;
-  top: 0px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateX(150%);
-  transition: transform 0.4s ease;
-  transition-delay: 0s;
-  z-index: 2;
-}
-.check .check-button .fa-check {
-  color: #99e2d0;
-  opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
 .plat-checkbox:checked + .check .check-background {
   transform: translateX(0);
-  transition-delay: 0s;
 }
-.plat-checkbox:checked + .check .fa-xmark {
-  opacity: 0;
+
+.check-button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  transform: translateY(-50%);
 }
-.plat-checkbox:checked + .check .check-button {
-  transform: translateX(-9px);
-  transition-delay: 0.05s;
+
+.check-button i {
+  color: #99e2d0;
 }
-.plat-checkbox:checked + .check .check-button .fa-check {
-  opacity: 1;
+
+.plat-checkbox:checked ~ p span {
+  right: 90px;
+}
+
+.plat-checkbox:checked ~ p {
+  width: 200px;
 }
 
 @media (min-width: 1024px) {
@@ -432,5 +416,8 @@ section.menu article span {
   }
   section.menu article {
     width: 634px;
+  }
+  .plat-checkbox:checked ~ p {
+    width: 500px;
   }
 }/*# sourceMappingURL=menu.css.map */

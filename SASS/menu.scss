@@ -43,69 +43,7 @@ main {
     padding: 40px 0;
   }
 }
-
-section.menu {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-self: center;
-  gap: 12px;
-  width: 349px;
-
-  h2 {
-    display: flex;
-    align-self: start;
-    font-weight: 300;
-    font-size: 16px;
-    border-bottom: 3px solid variables.$new-bg-color;
-    width: 40px;
-    padding-bottom: 5px;
-    margin: 30px 0 0 0;
-  }
-
-  article {
-    position: relative;
-    background-color: white;
-    border-radius: 15px;
-    width: 349px;
-    height: 69px;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
-    h3,
-    p {
-      width: 280px;
-      margin: 0;
-      margin-left: 15px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    h3 {
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    p {
-      font-size: 15px;
-      font-weight: 300;
-    }
-
-    span {
-      position: absolute;
-      right: 10px;
-      font-weight: 700;
-      color: #353535;
-    }
-  }
-}
+/* Animation coeur */
 
 .fa-heart {
   font-size: 24px;
@@ -159,6 +97,74 @@ section.menu {
   }
 }
 
+/* Fin animation coeur */
+
+section.menu {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: 12px;
+  width: 349px;
+
+  h2 {
+    display: flex;
+    align-self: start;
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom: 3px solid variables.$new-bg-color;
+    width: 40px;
+    padding-bottom: 5px;
+    margin: 30px 0 0 0;
+  }
+
+  article {
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    width: 349px;
+    height: 69px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    h3,
+    p {
+      width: 280px;
+      margin: 0;
+      margin-left: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 300;
+      transition: width 0.4s ease;
+    }
+
+    p span {
+      position: absolute;
+      right: 10px;
+      font-weight: 700;
+      color: #353535;
+
+      transition: right 0.4s ease;
+    }
+  }
+}
+
 @keyframes appear {
   from {
     opacity: 0;
@@ -203,93 +209,63 @@ section.menu {
 
 .check {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  border-radius: 25px;
+  inset: 0;
 
-  width: 40px;
-  height: 20px;
-
-  background-color: #e0e0e0;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  border-radius: 15px;
 
   cursor: pointer;
   overflow: hidden;
-
-  .fa-xmark {
-    position: absolute;
-    right: 7px;
-    color: #888;
-    transition: opacity 0.4s ease;
-    z-index: 1;
-  }
-
-  .check-background {
-    position: absolute;
-    top: 0;
-    left: 5px;
-    border-radius: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: variables.$new-bg-color;
-
-    transform: translateX(150%);
-    transition: transform 0.4s ease;
-  }
-
-  .check-button {
-    position: absolute;
-    right: 10px;
-    top: 0px;
-
-    width: 20px;
-    height: 20px;
-
-    border-radius: 50%;
-
-    background-color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transform: translateX(150%);
-    transition: transform 0.4s ease;
-    transition-delay: 0s;
-
-    z-index: 2;
-
-    .fa-check {
-      color: variables.$new-bg-color;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-  }
 }
 
-.plat-checkbox:checked + .check {
-  .check-background {
-    transform: translateX(0);
-    transition-delay: 0s;
-  }
+.check-background {
+  position: absolute;
 
-  .fa-xmark {
-    opacity: 0;
-  }
+  top: 0;
+  right: 0;
 
-  .check-button {
-    transform: translateX(-9px);
-    transition-delay: 0.05s;
+  width: 59px;
+  height: 69px;
 
-    .fa-check {
-      opacity: 1;
-    }
-  }
+  background-color: variables.$new-bg-color;
+
+  transform: translateX(100%);
+
+  transition: transform 0.4s ease;
+}
+
+.plat-checkbox:checked + .check .check-background {
+  transform: translateX(0);
+}
+
+.check-button {
+  position: absolute;
+
+  top: 50%;
+  right: 20px;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: white;
+
+  transform: translateY(-50%);
+}
+
+.check-button i {
+  color: variables.$new-bg-color;
+}
+
+.plat-checkbox:checked ~ p span {
+  right: 90px;
+}
+
+.plat-checkbox:checked ~ p {
+  width: 200px;
 }
 
 @media (min-width: 1024px) {
@@ -324,5 +300,9 @@ section.menu {
     article {
       width: 634px;
     }
+  }
+
+  .plat-checkbox:checked ~ p {
+    width: 500px;
   }
 }
