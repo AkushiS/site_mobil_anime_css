@@ -300,6 +300,8 @@ section {
         margin-right: 10px;
       }
 
+      /* Animation coeur */
+
       .fa-heart {
         font-size: 24px;
         margin: 0;
@@ -311,8 +313,8 @@ section {
           variables.$main-color,
           variables.$secondary-color
         );
-        background-clip: text;
-        color: transparent;
+        background-clip: text; /* change la couleur de l'icone seulement */
+        color: transparent; /*retire couleur de base */
       }
 
       .heart-checkbox {
@@ -342,7 +344,7 @@ section {
           /* grandit en 0.3s */
         }
       }
-
+      /* heart-checkbox cocher = selectionne le heart-label qui suis */
       .heart-checkbox:checked + .heart-label {
         .fa-regular {
           opacity: 0;
@@ -352,7 +354,7 @@ section {
           opacity: 1; /* redeviens visible */
           transform: scale(1); /* reprend sa taille normal */
         }
-      }
+      } /* Fin animation coeur */
     }
   }
 }

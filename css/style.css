@@ -368,6 +368,9 @@ section.restaurant article i {
   grid-row: 2;
   margin-right: 10px;
 }
+section.restaurant article {
+  /* Animation coeur */
+}
 section.restaurant article .fa-heart {
   font-size: 24px;
   margin: 0;
@@ -375,8 +378,8 @@ section.restaurant article .fa-heart {
 section.restaurant article .fa-solid.fa-heart {
   background: linear-gradient(to bottom, #9356dc, #ff79da);
   -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
+          background-clip: text; /* change la couleur de l'icone seulement */
+  color: transparent; /*retire couleur de base */
 }
 section.restaurant article .heart-checkbox {
   display: none;
@@ -399,12 +402,18 @@ section.restaurant article .heart-label .fa-solid {
   transition: opacity 0.3s ease, transform 0.3s ease;
   /* grandit en 0.3s */
 }
+section.restaurant article {
+  /* heart-checkbox cocher = selectionne le heart-label qui suis */
+}
 section.restaurant article .heart-checkbox:checked + .heart-label .fa-regular {
   opacity: 0;
 }
 section.restaurant article .heart-checkbox:checked + .heart-label .fa-solid {
   opacity: 1; /* redeviens visible */
   transform: scale(1); /* reprend sa taille normal */
+}
+section.restaurant article {
+  /* Fin animation coeur */
 }
 
 @media (min-width: 1024px) {

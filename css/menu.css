@@ -1,3 +1,4 @@
+@charset "UTF-8";
 button {
   position: relative;
   overflow: hidden;
@@ -301,6 +302,7 @@ section.menu article p span {
   transition: right 0.4s ease;
 }
 
+/* Animation Loader Menu */
 @keyframes appear {
   from {
     opacity: 0;
@@ -337,6 +339,8 @@ section.menu article p span {
   animation-delay: 1s;
 }
 
+/* Fin Animation Loader Menu */
+/* Animation sélecteur de plat */
 .plat-checkbox {
   display: none;
 }
@@ -390,6 +394,7 @@ section.menu article p span {
   width: 200px;
 }
 
+/* Fin Animation sélecteur de plat */
 @media (min-width: 1024px) {
   body {
     background-color: white;
