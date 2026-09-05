@@ -314,7 +314,6 @@ section.menu article p span {
     transform: translateY(0);
   }
 }
-/* Animation Loader Menu */
 .menu {
   opacity: 0;
   animation: appear 0.6s ease forwards;
